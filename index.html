@@ -19,39 +19,72 @@ Select ONE Additional Feature to Add
     <meta charset="utf-8" />
     <title>Unit 13 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>Quiz About BREE</h1>
     <hr />
     <!-- Movie Question -->
+    <div class="lightblue">
+      
+   
     <form id="movie-form">
       <label>
-        🎥 What is my favorite movie?
+        💧 What is my favorite body of water?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">waterfalls</option>
+          <option value="movie2">lakes</option>
+          <option value="movie3">the beach</option>
+          <option value="movie4">the pool</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="movie-result">
+      <p id="movie-text">
+        
+      </p>
+    <img class="confetti"
+         style="display: none"
+         src="https://cdn.glitch.global/f0e28c23-675b-4387-a3c6-2bf2143a1b4a/thumbnails%2F13e3f4d6-9422-4443-a120-77499046fa80.image.png?1747324088306"
+        width="80px">
+      <img class="wrong"
+           style= "display: none" 
+           src="https://cdn.glitch.global/f0e28c23-675b-4387-a3c6-2bf2143a1b4a/a3b2c0be-0d5b-471c-9468-ebb799c7e681.image.png?v=1747324607456"
+           width="80px">
+    </div>
     <hr />
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
+        👀 What is my favorite texture? 
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">silky</option>
+          <option value="book2">slimy </option>
+          <option value="book3">bumpy</option>
+          <option value="book4">fluffy</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
-    <div id="book-result"></div>
+    <div id="book-result">
+   <p id="book-text">
+     
+      </p>
+       <img class="confetti2"
+         style="display: none"
+         src="https://cdn.glitch.global/f0e28c23-675b-4387-a3c6-2bf2143a1b4a/thumbnails%2F13e3f4d6-9422-4443-a120-77499046fa80.image.png?1747324088306"
+        width="80px">
+      <img class="wrong2"
+           style= "display: none" 
+           src="https://cdn.glitch.global/f0e28c23-675b-4387-a3c6-2bf2143a1b4a/a3b2c0be-0d5b-471c-9468-ebb799c7e681.image.png?v=1747324607456"
+           width="80px">
+    </div>
+      <br>
+      <br>
+       </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       //Movie Question jQuery Code
@@ -61,10 +94,15 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
+        if (answer === "movie3") {
+          $("#movie-text").text("You got it!!");
+          $(".confetti").show(1000);
+          $(".wrong").hide(10);
+     
         } else {
-          $("#movie-result").text("Try Again!");
+          $("#movie-text").text("c'mon man...");
+          $(".wrong").show(1000); 
+          $(".confetti").hide(10);
         }
       });
 
@@ -75,10 +113,14 @@ Select ONE Additional Feature to Add
         var $answer = $("#book-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
+        if (answer === "book4") {
+          $("#book-text").text("EXACTLY!!");
+          $(".confetti2").show(1000); 
+          $(".wrong2").hide(10);
         } else {
-          $("#book-result").text("Try Again!");
+          $("#book-text").text("or not?");
+          $(".wrong2").show(1000); 
+          $(".confetti2").hide(10);
         }
       });
     </script>
